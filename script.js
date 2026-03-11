@@ -1041,6 +1041,48 @@ function attachControls() {
   });
 }
 
+function attachGlossaryInteractions() {
+  const terms = Array.from(document.querySelectorAll(".glossary-term"));
+
+  function closeAllGlossaryTerms(except = null) {
+    terms.forEach((term) => {
+      if (term !== except) {
+        term.classList.remove("is-open");
+      }
+    });
+  }
+
+  terms.forEach((term) => {
+    term.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const willOpen = !term.classList.contains("is-open");
+      closeAllGlossaryTerms();
+      term.classList.toggle("is-open", willOpen);
+      if (willOpen) {
+        term.focus();
+      }
+    });
+
+    term.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        term.click();
+      }
+      if (event.key === "Escape") {
+        term.classList.remove("is-open");
+        term.blur();
+      }
+    });
+  });
+
+  document.addEventListener("click", () => closeAllGlossaryTerms());
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeAllGlossaryTerms();
+    }
+  });
+}
+
 function renderAllSimulations() {
   updateReflection();
   updateRefraction();
@@ -1054,6 +1096,7 @@ function init() {
   moduleData.forEach(buildModuleQuiz);
   renderCapstone();
   attachControls();
+  attachGlossaryInteractions();
   renderNav();
   renderAllSimulations();
   if (completedCount() > 0) {

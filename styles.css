@@ -317,6 +317,57 @@ select {
   font-size: 0.92rem;
 }
 
+.glossary-term {
+  position: relative;
+  cursor: help;
+  outline: none;
+}
+
+.glossary-term::after {
+  content: attr(data-definition);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  transform: translateX(-50%) translateY(6px);
+  width: min(280px, 70vw);
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(29, 25, 26, 0.94);
+  color: #fffdfd;
+  box-shadow: 0 16px 28px rgba(29, 25, 26, 0.2);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+  z-index: 10;
+}
+
+.glossary-term::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 4px);
+  transform: translateX(-50%) translateY(6px);
+  border-width: 8px 8px 0 8px;
+  border-style: solid;
+  border-color: rgba(29, 25, 26, 0.94) transparent transparent transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+  z-index: 10;
+}
+
+.glossary-term:hover::after,
+.glossary-term:hover::before,
+.glossary-term:focus-visible::after,
+.glossary-term:focus-visible::before,
+.glossary-term.is-open::after,
+.glossary-term.is-open::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 .formula {
   margin: 10px 0;
   font-family: "Courier New", monospace;
