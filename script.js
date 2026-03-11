@@ -18,6 +18,21 @@ const moduleData = [
         ],
         answer: 1,
       },
+      {
+        prompt: "The angle of incidence is measured relative to the",
+        options: ["mirror surface", "normal line", "image location"],
+        answer: 1,
+      },
+      {
+        prompt: "If a mirror surface is rough instead of smooth, reflected light is more likely to",
+        options: ["undergo diffuse reflection", "focus at one point", "stop moving"],
+        answer: 0,
+      },
+      {
+        prompt: "In a plane mirror, if the object moves 1 meter closer to the mirror, the image moves",
+        options: ["1 meter farther behind it", "1 meter closer behind it", "2 meters behind it"],
+        answer: 1,
+      },
     ],
   },
   {
@@ -41,6 +56,21 @@ const moduleData = [
           "from higher index to lower index",
           "between equal indices",
         ],
+        answer: 1,
+      },
+      {
+        prompt: "A larger index of refraction means light travels",
+        options: ["more slowly in that medium", "more quickly in that medium", "at the same speed"],
+        answer: 0,
+      },
+      {
+        prompt: "If light goes from water into air, it usually bends",
+        options: ["toward the normal", "away from the normal", "into a straight 90 degree turn"],
+        answer: 1,
+      },
+      {
+        prompt: "The critical angle is defined for the angle of",
+        options: ["reflection", "incidence in the higher-index medium", "refraction in the lower-index medium"],
         answer: 1,
       },
     ],
@@ -68,6 +98,21 @@ const moduleData = [
         ],
         answer: 0,
       },
+      {
+        prompt: "For a concave mirror, parallel incoming rays reflect",
+        options: ["through the focal point", "parallel to the axis", "back through the object"],
+        answer: 0,
+      },
+      {
+        prompt: "A negative image distance for a mirror indicates the image is",
+        options: ["real", "virtual", "at the focal point"],
+        answer: 1,
+      },
+      {
+        prompt: "If magnification for a mirror is negative, the image is",
+        options: ["upright", "inverted", "virtual"],
+        answer: 1,
+      },
     ],
   },
   {
@@ -93,6 +138,21 @@ const moduleData = [
         ],
         answer: 0,
       },
+      {
+        prompt: "A diverging lens causes parallel incoming rays to",
+        options: ["converge at the far focal point", "spread out as if from the near focal point", "reflect backward"],
+        answer: 1,
+      },
+      {
+        prompt: "For a converging lens, an object beyond the focal length can produce a",
+        options: ["real image", "virtual image only", "polarized image only"],
+        answer: 0,
+      },
+      {
+        prompt: "A positive focal length in the thin lens model corresponds to a",
+        options: ["converging lens", "diverging lens", "plane mirror"],
+        answer: 0,
+      },
     ],
   },
   {
@@ -114,6 +174,21 @@ const moduleData = [
         options: ["increase", "decrease", "stay the same"],
         answer: 1,
       },
+      {
+        prompt: "Bright fringes in a double-slit pattern are caused by",
+        options: ["constructive interference", "destructive interference", "total internal reflection"],
+        answer: 0,
+      },
+      {
+        prompt: "Making a single slit narrower causes the diffraction pattern to",
+        options: ["spread out more", "collapse to one point", "lose the central maximum"],
+        answer: 0,
+      },
+      {
+        prompt: "If screen distance increases while other variables stay fixed, the fringe spacing on the screen will",
+        options: ["increase", "decrease", "stay constant"],
+        answer: 0,
+      },
     ],
   },
   {
@@ -130,6 +205,21 @@ const moduleData = [
         prompt: "For unpolarized light, the first ideal polarizer transmits",
         options: ["all of the light", "half of the light", "one quarter of the light"],
         answer: 1,
+      },
+      {
+        prompt: "Malus's law relates transmitted intensity to the",
+        options: ["square of cosine of the angle", "sine of the angle", "mirror focal length"],
+        answer: 0,
+      },
+      {
+        prompt: "The purpose of a polarizer is to filter light by",
+        options: ["wavelength only", "oscillation direction", "speed in vacuum"],
+        answer: 1,
+      },
+      {
+        prompt: "If the angle between two ideal polarizers decreases, transmitted intensity generally",
+        options: ["increases", "decreases", "becomes negative"],
+        answer: 0,
       },
     ],
   },

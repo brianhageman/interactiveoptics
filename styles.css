@@ -1,14 +1,14 @@
 :root {
-  --bg: #f4efe6;
-  --panel: #fffaf2;
-  --panel-strong: #f8ead0;
-  --ink: #1f2430;
-  --muted: #5d6675;
-  --accent: #0f766e;
-  --accent-strong: #0a4f58;
-  --gold: #e7a33b;
-  --line: rgba(31, 36, 48, 0.12);
-  --shadow: 0 18px 45px rgba(31, 36, 48, 0.12);
+  --bg: #f3eff0;
+  --panel: #fffdfd;
+  --panel-strong: #f3e7e9;
+  --ink: #1d191a;
+  --muted: #62585b;
+  --accent: #8b3a43;
+  --accent-strong: #571f27;
+  --gold: #c9b7bb;
+  --line: rgba(29, 25, 26, 0.12);
+  --shadow: 0 18px 45px rgba(29, 25, 26, 0.12);
 }
 
 * {
@@ -24,8 +24,9 @@ body {
   font-family: "Avenir Next", "Segoe UI", sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at top right, rgba(231, 163, 59, 0.25), transparent 28%),
-    linear-gradient(180deg, #f7f1e7 0%, #efe5d5 100%);
+    radial-gradient(circle at top right, rgba(139, 58, 67, 0.18), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(29, 25, 26, 0.08), transparent 26%),
+    linear-gradient(180deg, #f7f3f4 0%, #ebe3e5 100%);
 }
 
 button,
@@ -53,8 +54,8 @@ select {
 .overview-card,
 .course-nav,
 .lesson-panel {
-  background: rgba(255, 250, 242, 0.86);
-  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: rgba(255, 253, 253, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(14px);
   border-radius: 24px;
   box-shadow: var(--shadow);
@@ -120,7 +121,7 @@ select {
 .ghost-btn {
   background: transparent;
   color: var(--accent-strong);
-  border: 1px solid rgba(15, 118, 110, 0.35);
+  border: 1px solid rgba(87, 31, 39, 0.3);
 }
 
 .primary-btn:hover,
@@ -136,8 +137,8 @@ select {
   gap: 14px;
   align-content: center;
   background:
-    linear-gradient(160deg, rgba(15, 118, 110, 0.1), rgba(231, 163, 59, 0.12)),
-    rgba(255, 250, 242, 0.92);
+    linear-gradient(160deg, rgba(139, 58, 67, 0.12), rgba(29, 25, 26, 0.08)),
+    rgba(255, 253, 253, 0.92);
 }
 
 .stat {
@@ -207,7 +208,7 @@ select {
 .progress-fill {
   width: 0;
   height: 100%;
-  background: linear-gradient(90deg, var(--gold), var(--accent));
+  background: linear-gradient(90deg, #b79ca1, var(--accent));
   transition: width 240ms ease;
 }
 
@@ -224,8 +225,8 @@ select {
 }
 
 .module-button.active {
-  background: linear-gradient(135deg, rgba(15, 118, 110, 0.15), rgba(231, 163, 59, 0.15));
-  border-color: rgba(15, 118, 110, 0.28);
+  background: linear-gradient(135deg, rgba(139, 58, 67, 0.15), rgba(29, 25, 26, 0.1));
+  border-color: rgba(87, 31, 39, 0.28);
 }
 
 .module-button.locked {
@@ -311,7 +312,7 @@ select {
 .concept-strip span {
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(15, 118, 110, 0.08);
+  background: rgba(139, 58, 67, 0.08);
   color: var(--accent-strong);
   font-size: 0.92rem;
 }
@@ -333,7 +334,7 @@ select {
 .sim-card {
   padding: 16px;
   background:
-    linear-gradient(180deg, rgba(15, 118, 110, 0.05), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, rgba(139, 58, 67, 0.05), rgba(255, 255, 255, 0)),
     var(--panel);
 }
 
@@ -342,7 +343,7 @@ select {
   height: auto;
   display: block;
   border-radius: 16px;
-  background: linear-gradient(180deg, #fdfbf7, #f6efe1);
+  background: linear-gradient(180deg, #fffefe, #f4ecee);
 }
 
 .control-card label {
@@ -367,7 +368,7 @@ select {
 
 .quiz-card {
   background:
-    linear-gradient(180deg, rgba(231, 163, 59, 0.08), transparent),
+    linear-gradient(180deg, rgba(139, 58, 67, 0.08), transparent),
     var(--panel);
 }
 
@@ -424,7 +425,7 @@ select {
 .quiz-secondary {
   border-radius: 999px;
   padding: 12px 18px;
-  border: 1px solid rgba(15, 118, 110, 0.28);
+  border: 1px solid rgba(87, 31, 39, 0.28);
   background: transparent;
   color: var(--accent-strong);
   cursor: pointer;
@@ -448,7 +449,7 @@ select {
   gap: 8px;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(15, 118, 110, 0.08);
+  background: rgba(139, 58, 67, 0.08);
   color: var(--accent-strong);
   font-weight: 700;
   margin-right: 10px;
