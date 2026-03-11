@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optics Studio | AP Physics 1</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">AP Physics 1 Optics</p>
+          <h1>Optics Studio</h1>
+          <p class="hero-text">
+            A browser-based optics course for Chromebooks. Students work through
+            geometric optics and physical optics, test ideas with simulations,
+            and unlock the next topic only after answering checkpoint questions
+            correctly.
+          </p>
+          <div class="hero-actions">
+            <button id="start-course" class="primary-btn">Start the Course</button>
+            <button id="reset-progress" class="ghost-btn">Reset Progress</button>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="stat">
+            <span class="stat-label">Modules</span>
+            <strong>6</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Interactive Labs</span>
+            <strong>6</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Learning Flow</span>
+            <strong>Quiz-gated</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="overview-grid">
+        <article class="overview-card">
+          <h2>What Students Will Learn</h2>
+          <p>
+            Reflection, refraction, mirrors, lenses, interference, diffraction,
+            and polarization. Each lesson connects conceptual reasoning to the
+            equations students use in AP Physics 1.
+          </p>
+        </article>
+        <article class="overview-card">
+          <h2>How It Works</h2>
+          <p>
+            Use the controls to change angles, indices of refraction, focal
+            lengths, slit widths, and analyzer angles. Watch the diagram or
+            graph update in real time, then answer the checkpoint questions.
+          </p>
+        </article>
+        <article class="overview-card">
+          <h2>Teacher-Friendly</h2>
+          <p>
+            Everything runs client-side in plain HTML, CSS, and JavaScript. The
+            site can be opened locally or hosted on any static web host.
+          </p>
+        </article>
+      </section>
+
+      <section class="course-shell">
+        <aside class="course-nav">
+          <div class="nav-header">
+            <h2>Course Map</h2>
+            <p id="progress-label">0 of 6 modules completed</p>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+          <div id="module-nav" class="module-nav"></div>
+        </aside>
+
+        <main class="lesson-stage">
+          <section id="welcome-panel" class="lesson-panel active">
+            <div class="panel-header">
+              <p class="panel-kicker">Before You Begin</p>
+              <h2>Use This Site Like a Lab Notebook</h2>
+            </div>
+            <div class="content-grid">
+              <div class="text-card">
+                <p>
+                  This course is sequential on purpose. Students should record
+                  what each variable does before moving on. The simulations are
+                  not just animations; they are visual models of the equations.
+                </p>
+                <p>
+                  Recommended classroom flow: explore the controls, predict what
+                  will happen, test the prediction, then complete the checkpoint.
+                </p>
+              </div>
+              <div class="formula-card">
+                <h3>Big Ideas</h3>
+                <ul>
+                  <li>Light follows predictable geometric rules at boundaries.</li>
+                  <li>Images can be located with rays and thin optical equations.</li>
+                  <li>Wave behavior creates patterns from path difference.</li>
+                  <li>Polarization filters oscillation direction and intensity.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="panel-reflection" class="lesson-panel" data-module="reflection">
+            <div class="panel-header">
+              <p class="panel-kicker">Module 1</p>
+              <h2>Reflection</h2>
+            </div>
+            <div class="content-grid">
+              <div class="text-card">
+                <p>
+                  Reflection happens when light strikes a surface and bounces
+                  back into the original medium. For a smooth surface, the law of
+                  reflection states that the angle of incidence equals the angle
+                  of reflection, with both angles measured from the normal.
+                </p>
+                <p>
+                  Plane mirrors do not focus light. They produce upright, virtual
+                  images the same distance behind the mirror as the object is in
+                  front of it. The ray model is the starting point for every
+                  larger geometric optics system.
+                </p>
+                <div class="concept-strip">
+                  <span>Specular reflection</span>
+                  <span>Normal line</span>
+                  <span>Virtual image</span>
+                </div>
+              </div>
+              <div class="formula-card">
+                <h3>Key Rule</h3>
+                <p class="formula">theta_i = theta_r</p>
+                <p>
+                  The reflected ray stays in the same plane as the incident ray
+                  and the normal.
+                </p>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <div class="sim-card">
+                <canvas id="reflection-canvas" width="720" height="360"></canvas>
+              </div>
+              <div class="control-card">
+                <h3>Reflection Lab</h3>
+                <label for="reflection-angle">Incident angle</label>
+                <input id="reflection-angle" type="range" min="5" max="80" value="35" />
+                <div class="value-row"><span>Angle</span><strong id="reflection-angle-value"></strong></div>
+                <div class="value-row"><span>Reflected angle</span><strong id="reflection-result"></strong></div>
+              </div>
+            </div>
+            <div class="quiz-card">
+              <h3>Checkpoint</h3>
+              <div id="quiz-reflection"></div>
+            </div>
+          </section>
+
+          <section id="panel-refraction" class="lesson-panel" data-module="refraction">
+            <div class="panel-header">
+              <p class="panel-kicker">Module 2</p>
+              <h2>Refraction and Different Media</h2>
+            </div>
+            <div class="content-grid">
+              <div class="text-card">
+                <p>
+                  Refraction occurs because light changes speed when it crosses
+                  into a new medium. The index of refraction, n, describes how
+                  strongly a medium slows light relative to vacuum.
+                </p>
+                <p>
+                  If light enters a medium with a larger index, it bends toward
+                  the normal. If it enters a smaller index, it bends away from
+                  the normal. When light tries to leave a high-index medium at a
+                  large enough angle, total internal reflection can occur.
+                </p>
+                <div class="concept-strip">
+                  <span>Snell's law</span>
+                  <span>Critical angle</span>
+                  <span>Total internal reflection</span>
+                </div>
+              </div>
+              <div class="formula-card">
+                <h3>Key Rule</h3>
+                <p class="formula">n1 sin(theta1) = n2 sin(theta2)</p>
+                <p>
+                  Compare the indices and angle to predict whether the ray bends
+                  toward or away from the normal.
+                </p>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <div class="sim-card">
+                <canvas id="refraction-canvas" width="720" height="360"></canvas>
+              </div>
+              <div class="control-card">
+                <h3>Refraction Lab</h3>
+                <label for="n1-slider">Top medium index</label>
+                <input id="n1-slider" type="range" min="100" max="180" value="100" />
+                <label for="n2-slider">Bottom medium index</label>
+                <input id="n2-slider" type="range" min="100" max="180" value="133" />
+                <label for="refraction-angle">Incident angle</label>
+                <input id="refraction-angle" type="range" min="0" max="80" value="35" />
+                <div class="value-row"><span>n1</span><strong id="n1-value"></strong></div>
+                <div class="value-row"><span>n2</span><strong id="n2-value"></strong></div>
+                <div class="value-row"><span>Incident angle</span><strong id="refraction-angle-value"></strong></div>
+                <div class="value-row"><span>Outcome</span><strong id="refraction-result"></strong></div>
+              </div>
+            </div>
+            <div class="quiz-card">
+              <h3>Checkpoint</h3>
+              <div id="quiz-refraction"></div>
+            </div>
+          </section>
+
+          <section id="panel-mirrors" class="lesson-panel" data-module="mirrors">
+            <div class="panel-header">
+              <p class="panel-kicker">Module 3</p>
+              <h2>Curved Mirrors</h2>
+            </div>
+            <div class="content-grid">
+              <div class="text-card">
+                <p>
+                  Concave mirrors converge parallel rays toward a focal point and
+                  can create real or virtual images depending on object position.
+                  Convex mirrors diverge rays and always produce upright, reduced,
+                  virtual images.
+                </p>
+                <p>
+                  The thin mirror equation predicts the image position, while
+                  magnification describes how image size compares to object size.
+                  Ray diagrams explain why the math works.
+                </p>
+                <div class="concept-strip">
+                  <span>Concave</span>
+                  <span>Convex</span>
+                  <span>Magnification</span>
+                </div>
+              </div>
+              <div class="formula-card">
+                <h3>Key Rules</h3>
+                <p class="formula">1/f = 1/do + 1/di</p>
+                <p class="formula">m = -di/do = hi/ho</p>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <div class="sim-card">
+                <canvas id="mirror-canvas" width="720" height="380"></canvas>
+              </div>
+              <div class="control-card">
+                <h3>Mirror Lab</h3>
+                <label for="mirror-type">Mirror type</label>
+                <select id="mirror-type">
+                  <option value="concave">Concave</option>
+                  <option value="convex">Convex</option>
+                </select>
+                <label for="mirror-focal">Focal length (cm)</label>
+                <input id="mirror-focal" type="range" min="3" max="12" value="6" />
+                <label for="mirror-distance">Object distance (cm)</label>
+                <input id="mirror-distance" type="range" min="4" max="20" value="12" />
+                <label for="mirror-height">Object height (cm)</label>
+                <input id="mirror-height" type="range" min="2" max="8" value="5" />
+                <div class="value-row"><span>Image distance</span><strong id="mirror-image-distance"></strong></div>
+                <div class="value-row"><span>Image height</span><strong id="mirror-image-height"></strong></div>
+                <div class="value-row"><span>Image type</span><strong id="mirror-image-type"></strong></div>
+              </div>
+            </div>
+            <div class="quiz-card">
+              <h3>Checkpoint</h3>
+              <div id="quiz-mirrors"></div>
+            </div>
+          </section>
+
+          <section id="panel-lenses" class="lesson-panel" data-module="lenses">
+            <div class="panel-header">
+              <p class="panel-kicker">Module 4</p>
+              <h2>Lenses</h2>
+            </div>
+            <div class="content-grid">
+              <div class="text-card">
+                <p>
+                  Converging lenses bend parallel rays toward a focal point on
+                  the far side of the lens. Diverging lenses spread rays apart as
+                  if they came from a focal point on the same side as the object.
+                </p>
+                <p>
+                  The thin lens equation has the same form as the mirror
+                  equation, but the geometry changes because rays pass through the
+                  optic instead of reflecting from it. Central rays continue
+                  straight through the middle of the lens.
+                </p>
+                <div class="concept-strip">
+                  <span>Converging lens</span>
+                  <span>Diverging lens</span>
+                  <span>Real vs. virtual image</span>
+                </div>
+              </div>
+              <div class="formula-card">
+                <h3>Key Rules</h3>
+                <p class="formula">1/f = 1/do + 1/di</p>
+                <p class="formula">m = -di/do</p>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <div class="sim-card">
+                <canvas id="lens-canvas" width="720" height="380"></canvas>
+              </div>
+              <div class="control-card">
+                <h3>Lens Lab</h3>
+                <label for="lens-type">Lens type</label>
+                <select id="lens-type">
+                  <option value="converging">Converging</option>
+                  <option value="diverging">Diverging</option>
+                </select>
+                <label for="lens-focal">Focal length (cm)</label>
+                <input id="lens-focal" type="range" min="3" max="12" value="6" />
+                <label for="lens-distance">Object distance (cm)</label>
+                <input id="lens-distance" type="range" min="4" max="20" value="12" />
+                <label for="lens-height">Object height (cm)</label>
+                <input id="lens-height" type="range" min="2" max="8" value="5" />
+                <div class="value-row"><span>Image distance</span><strong id="lens-image-distance"></strong></div>
+                <div class="value-row"><span>Image height</span><strong id="lens-image-height"></strong></div>
+                <div class="value-row"><span>Image type</span><strong id="lens-image-type"></strong></div>
+              </div>
+            </div>
+            <div class="quiz-card">
+              <h3>Checkpoint</h3>
+              <div id="quiz-lenses"></div>
+            </div>
+          </section>
+
+          <section id="panel-wave" class="lesson-panel" data-module="wave">
+            <div class="panel-header">
+              <p class="panel-kicker">Module 5</p>
+              <h2>Interference and Diffraction</h2>
+            </div>
+            <div class="content-grid">
+              <div class="text-card">
+                <p>
+                  When light behaves like a wave, path difference matters. Two
+                  slits create bright fringes where crests and troughs line up,
+                  and dark fringes where they cancel. A single slit creates a
+                  broad central maximum and weaker side maxima because each part
+                  of the slit acts like a source.
+                </p>
+                <p>
+                  Double-slit interference depends strongly on slit separation,
+                  while diffraction depends strongly on slit width. Wavelength and
+                  screen distance stretch or compress the pattern in both cases.
+                </p>
+                <div class="concept-strip">
+                  <span>Constructive interference</span>
+                  <span>Destructive interference</span>
+                  <span>Diffraction envelope</span>
+                </div>
+              </div>
+              <div class="formula-card">
+                <h3>Key Rules</h3>
+                <p class="formula">d sin(theta) = m lambda</p>
+                <p class="formula">a sin(theta) = m lambda</p>
+                <p>Use the first for double slit bright fringes and the second for diffraction minima.</p>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <div class="sim-card">
+                <canvas id="wave-canvas" width="720" height="360"></canvas>
+              </div>
+              <div class="control-card">
+                <h3>Wave Optics Lab</h3>
+                <label for="wave-mode">Pattern type</label>
+                <select id="wave-mode">
+                  <option value="single">Single slit diffraction</option>
+                  <option value="double">Double slit interference</option>
+                </select>
+                <label for="wave-wavelength">Wavelength (nm)</label>
+                <input id="wave-wavelength" type="range" min="380" max="700" value="550" />
+                <label for="wave-width">Slit width (um)</label>
+                <input id="wave-width" type="range" min="10" max="80" value="30" />
+                <label for="wave-separation">Slit separation (mm)</label>
+                <input id="wave-separation" type="range" min="20" max="150" value="60" />
+                <label for="wave-distance">Screen distance (m)</label>
+                <input id="wave-distance" type="range" min="10" max="40" value="20" />
+                <div class="value-row"><span>Wavelength</span><strong id="wave-wavelength-value"></strong></div>
+                <div class="value-row"><span>Central width / fringe spacing</span><strong id="wave-result"></strong></div>
+              </div>
+            </div>
+            <div class="quiz-card">
+              <h3>Checkpoint</h3>
+              <div id="quiz-wave"></div>
+            </div>
+          </section>
+
+          <section id="panel-polarization" class="lesson-panel" data-module="polarization">
+            <div class="panel-header">
+              <p class="panel-kicker">Module 6</p>
+              <h2>Polarization</h2>
+            </div>
+            <div class="content-grid">
+              <div class="text-card">
+                <p>
+                  Polarization describes the direction in which the electric field
+                  oscillates. Unpolarized light contains many directions. A
+                  polarizing filter only transmits the component aligned with its
+                  transmission axis.
+                </p>
+                <p>
+                  After light passes one polarizer, a second polarizer changes the
+                  transmitted intensity depending on the relative angle between
+                  their axes. This is the basis of glare reduction, LCD displays,
+                  and many optical sensors.
+                </p>
+                <div class="concept-strip">
+                  <span>Transmission axis</span>
+                  <span>Malus's law</span>
+                  <span>Intensity filtering</span>
+                </div>
+              </div>
+              <div class="formula-card">
+                <h3>Key Rule</h3>
+                <p class="formula">I = I0 cos^2(theta)</p>
+                <p>
+                  For unpolarized light, the first ideal polarizer reduces the
+                  intensity to one-half before the analyzer angle matters.
+                </p>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <div class="sim-card">
+                <canvas id="polarization-canvas" width="720" height="360"></canvas>
+              </div>
+              <div class="control-card">
+                <h3>Polarization Lab</h3>
+                <label for="polarization-input">Incoming light</label>
+                <select id="polarization-input">
+                  <option value="unpolarized">Unpolarized</option>
+                  <option value="polarized">Already polarized</option>
+                </select>
+                <label for="polarization-angle">Analyzer angle (degrees)</label>
+                <input id="polarization-angle" type="range" min="0" max="90" value="30" />
+                <div class="value-row"><span>Analyzer angle</span><strong id="polarization-angle-value"></strong></div>
+                <div class="value-row"><span>Transmitted intensity</span><strong id="polarization-result"></strong></div>
+              </div>
+            </div>
+            <div class="quiz-card">
+              <h3>Checkpoint</h3>
+              <div id="quiz-polarization"></div>
+            </div>
+          </section>
+
+          <section id="panel-finish" class="lesson-panel">
+            <div class="panel-header">
+              <p class="panel-kicker">Final Assessment</p>
+              <h2>Optics Capstone</h2>
+            </div>
+            <div class="content-grid">
+              <div class="text-card">
+                <p>
+                  Students now need to synthesize the full optics unit. This
+                  capstone mixes geometric optics and wave optics in one graded
+                  assessment. Questions are randomized each attempt.
+                </p>
+                <p>
+                  Recommended use: require students to score at least 80% before
+                  counting the unit complete, then have them explain any missed
+                  questions in writing.
+                </p>
+              </div>
+              <div class="formula-card">
+                <h3>Scoring</h3>
+                <ul>
+                  <li>8 randomized multiple-choice questions</li>
+                  <li>Immediate percentage score and letter grade</li>
+                  <li>Best score saved on this device</li>
+                  <li>Retake available with a new randomized order</li>
+                </ul>
+              </div>
+            </div>
+            <div class="quiz-card">
+              <h3>Graded Capstone</h3>
+              <div id="capstone-summary" class="capstone-summary"></div>
+              <div id="quiz-capstone"></div>
+            </div>
+          </section>
+        </main>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
