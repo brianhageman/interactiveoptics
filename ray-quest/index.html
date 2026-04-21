@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ray Quest: Reflection + Refraction</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="stage" aria-label="Ray Quest game area">
+        <canvas id="game" width="1180" height="720"></canvas>
+        <div class="hud hud-top">
+          <div>
+            <span class="label">Level</span>
+            <strong id="levelName">Mirror Gate</strong>
+          </div>
+          <div>
+            <span class="label">Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div>
+            <span class="label">Accuracy</span>
+            <strong id="accuracy">--</strong>
+          </div>
+          <div>
+            <span class="label">Attempts</span>
+            <strong id="attempts">0</strong>
+          </div>
+        </div>
+        <div class="hud hud-bottom">
+          <button id="prevLevel" type="button" title="Previous level">←</button>
+          <button id="reset" type="button" title="Reset level">↻</button>
+          <button id="nextLevel" type="button" title="Next level">→</button>
+          <button id="fire" type="button" class="primary">Fire beam</button>
+        </div>
+        <div id="toast" class="toast" role="status" aria-live="polite"></div>
+        <div id="summaryOverlay" class="summary-overlay" aria-live="polite" hidden>
+          <div class="summary-card">
+            <span class="label">Mission accomplished</span>
+            <h2>Optics course cleared</h2>
+            <p id="summaryIntro">Every receiver was energized.</p>
+            <div class="summary-stats">
+              <div>
+                <span class="label">Final score</span>
+                <strong id="summaryScore">0</strong>
+              </div>
+              <div>
+                <span class="label">Total attempts</span>
+                <strong id="summaryAttempts">0</strong>
+              </div>
+              <div>
+                <span class="label">First-try hits</span>
+                <strong id="summaryFirstHits">0/5</strong>
+              </div>
+            </div>
+            <div id="summaryLevels" class="summary-levels"></div>
+            <div class="summary-actions">
+              <button id="summaryReplay" type="button" class="primary">Replay course</button>
+              <button id="summaryClose" type="button">Review levels</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel" aria-label="Optics controls">
+        <div class="brand">
+          <span class="mark"></span>
+          <div>
+            <h1>Ray Quest</h1>
+            <p>Sketch the ray, place the receiver, and test your optics prediction.</p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="beamAngle">Source angle from +x</label>
+          <div class="range-row">
+            <input id="beamAngle" type="range" min="-65" max="65" value="18" step="1">
+            <output id="angleOut" for="beamAngle">18°</output>
+          </div>
+          <p class="mini">Positive angles rotate counterclockwise from the +x-axis.</p>
+        </div>
+
+        <div id="elementControls" class="element-list"></div>
+
+        <div class="prediction-card">
+          <h2>Place receiver</h2>
+          <label for="targetY">Receiver y-coordinate</label>
+          <div class="range-row">
+            <input id="targetY" type="range" min="6" max="56" value="38" step="1">
+            <output id="targetYOut" for="targetY">38</output>
+          </div>
+          <p id="predictionText">Sketch the path on paper, calculate the height where the beam crosses the receiver line, then set the receiver y-coordinate before firing.</p>
+        </div>
+
+        <div class="formula-card">
+          <h2 id="lawTitle">Law of reflection</h2>
+          <p id="lawText">θᵢ = θᵣ. Reflect the beam so it leaves the mirror at the same angle from the normal.</p>
+        </div>
+
+        <div class="tips">
+          <h2>Mission</h2>
+          <p id="missionText">Place the receiver where your paper calculation says the beam will land.</p>
+        </div>
+      </aside>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>

@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ray Quest Prediction Worksheet</title>
+    <style>
+      :root {
+        --ink: #1b2530;
+        --muted: #596672;
+        --line: #9aa6af;
+        --soft: #eef4f7;
+        font-family: Georgia, "Times New Roman", serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #f4f6f7;
+      }
+
+      main {
+        width: min(8.5in, 100%);
+        margin: 0 auto;
+        padding: 0.35in;
+        background: white;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 0.05in;
+        font-size: 22pt;
+      }
+
+      h2 {
+        margin: 0 0 0.08in;
+        font-size: 14pt;
+      }
+
+      h3 {
+        margin: 0 0 0.08in;
+        font-size: 12pt;
+      }
+
+      .meta {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.25in;
+        margin-bottom: 0.18in;
+      }
+
+      .intro {
+        border: 1px solid var(--line);
+        background: var(--soft);
+        padding: 0.12in;
+        margin-bottom: 0.16in;
+      }
+
+      .equations {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.1in;
+      }
+
+      .level {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        border: 1px solid var(--line);
+        padding: 0.13in;
+        margin: 0 0 0.16in;
+      }
+
+      .knowns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.05in 0.18in;
+        margin-bottom: 0.1in;
+      }
+
+      .workbox {
+        height: 1.55in;
+        border: 1px solid var(--line);
+        background:
+          linear-gradient(to right, rgba(27, 37, 48, 0.08) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(27, 37, 48, 0.08) 1px, transparent 1px);
+        background-size: 0.2in 0.2in;
+        margin: 0.08in 0;
+      }
+
+      .response-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.1in;
+      }
+
+      .line {
+        border-bottom: 1px solid var(--ink);
+        min-height: 0.22in;
+      }
+
+      .note {
+        color: var(--muted);
+        font-size: 10pt;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0.1in 0 0.16in;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--line);
+        padding: 0.07in;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--soft);
+      }
+
+      .summary {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        border: 1px solid var(--line);
+        padding: 0.13in;
+      }
+
+      .short-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.12in;
+        margin-bottom: 0.12in;
+      }
+
+      @media print {
+        body {
+          background: white;
+        }
+
+        main {
+          width: auto;
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Ray Quest Prediction Worksheet</h1>
+      <div class="meta">
+        <div>Name: <span class="line"></span></div>
+        <div>Date / Period: <span class="line"></span></div>
+      </div>
+
+      <section class="intro">
+        <h2>Goal</h2>
+        <p>Use ray diagrams, the law of reflection, and Snell's law to predict where the beam will cross the fixed receiver line before testing in the game.</p>
+        <div class="equations">
+          <div><strong>Reflection:</strong> theta_i = theta_r</div>
+          <div><strong>Refraction:</strong> n1 sin(theta1) = n2 sin(theta2)</div>
+        </div>
+        <p class="note">Angles in the game are measured from +x with positive rotation counterclockwise. Angles in Snell's law are measured from the normal.</p>
+      </section>
+
+      <section class="level">
+        <h2>Level 1: Mirror Gate</h2>
+        <div class="knowns">
+          <div>Locked receiver line: x = <span class="line"></span></div>
+          <div>Predicted receiver height: y = <span class="line"></span></div>
+          <div>Source angle: <span class="line"></span></div>
+          <div>Mirror rotation: <span class="line"></span></div>
+          <div>Mirror normal direction: <span class="line"></span></div>
+        </div>
+        <h3>Sketch and Calculations</h3>
+        <div class="workbox"></div>
+        <div class="response-grid">
+          <div>Hit attempt #: <span class="line"></span></div>
+          <div>Points earned: <span class="line"></span></div>
+          <div>Correction: <span class="line"></span></div>
+        </div>
+      </section>
+
+      <section class="level">
+        <h2>Level 2: Glass Bend</h2>
+        <div class="knowns">
+          <div>Locked receiver line: x = <span class="line"></span></div>
+          <div>Predicted receiver height: y = <span class="line"></span></div>
+          <div>Source angle: <span class="line"></span></div>
+          <div>Glass rotation: <span class="line"></span></div>
+          <div>Glass index: n = <span class="line"></span></div>
+          <div>Boundary normal direction: <span class="line"></span></div>
+        </div>
+        <h3>Sketch and Calculations</h3>
+        <div class="workbox"></div>
+        <div class="response-grid">
+          <div>Hit attempt #: <span class="line"></span></div>
+          <div>Points earned: <span class="line"></span></div>
+          <div>Correction: <span class="line"></span></div>
+        </div>
+      </section>
+
+      <section class="level">
+        <h2>Level 3: Diamond Switchback</h2>
+        <div class="knowns">
+          <div>Locked receiver line: x = <span class="line"></span></div>
+          <div>Predicted receiver height: y = <span class="line"></span></div>
+          <div>Source angle: <span class="line"></span></div>
+          <div>Mirror rotation: <span class="line"></span></div>
+          <div>Dense block rotation: <span class="line"></span></div>
+          <div>Dense block index: n = <span class="line"></span></div>
+        </div>
+        <h3>Sketch and Calculations</h3>
+        <div class="workbox"></div>
+        <div class="response-grid">
+          <div>Hit attempt #: <span class="line"></span></div>
+          <div>Points earned: <span class="line"></span></div>
+          <div>Correction: <span class="line"></span></div>
+        </div>
+      </section>
+
+      <section class="level">
+        <h2>Level 4: Glass Relay</h2>
+        <div class="knowns">
+          <div>Locked receiver line: x = <span class="line"></span></div>
+          <div>Predicted receiver height: y = <span class="line"></span></div>
+          <div>Source angle: <span class="line"></span></div>
+          <div>Crown glass rotation: <span class="line"></span></div>
+          <div>Crown glass index: n = <span class="line"></span></div>
+          <div>Finishing mirror rotation: <span class="line"></span></div>
+        </div>
+        <h3>Sketch and Calculations</h3>
+        <div class="workbox"></div>
+        <div class="response-grid">
+          <div>Hit attempt #: <span class="line"></span></div>
+          <div>Points earned: <span class="line"></span></div>
+          <div>Correction: <span class="line"></span></div>
+        </div>
+      </section>
+
+      <section class="level">
+        <h2>Level 5: Prism Gauntlet</h2>
+        <div class="knowns">
+          <div>Locked receiver line: x = <span class="line"></span></div>
+          <div>Predicted receiver height: y = <span class="line"></span></div>
+          <div>Source angle: <span class="line"></span></div>
+          <div>Mirror 1 rotation: <span class="line"></span></div>
+          <div>Dense glass rotation: <span class="line"></span></div>
+          <div>Dense glass index: n = <span class="line"></span></div>
+          <div>Mirror 2 rotation: <span class="line"></span></div>
+        </div>
+        <h3>Sketch and Calculations</h3>
+        <div class="workbox"></div>
+        <div class="response-grid">
+          <div>Hit attempt #: <span class="line"></span></div>
+          <div>Points earned: <span class="line"></span></div>
+          <div>Correction: <span class="line"></span></div>
+        </div>
+      </section>
+
+      <section class="summary">
+        <h2>Mission Accomplished Summary</h2>
+        <div class="short-stats">
+          <div>Final score: <span class="line"></span></div>
+          <div>Total attempts: <span class="line"></span></div>
+          <div>First-try hits: <span class="line"></span> / 5</div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Attempts</th>
+              <th>Payout %</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Mirror Gate</td><td></td><td></td><td></td></tr>
+            <tr><td>Glass Bend</td><td></td><td></td><td></td></tr>
+            <tr><td>Diamond Switchback</td><td></td><td></td><td></td></tr>
+            <tr><td>Glass Relay</td><td></td><td></td><td></td></tr>
+            <tr><td>Prism Gauntlet</td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+        <h3>Reflection</h3>
+        <p>Which level required the most correction after testing? Why?</p>
+        <div class="line"></div>
+        <p>What was your most common source of error?</p>
+        <div class="line"></div>
+        <p>What strategy helped you make a better prediction?</p>
+        <div class="line"></div>
+      </section>
+    </main>
+  </body>
+</html>
