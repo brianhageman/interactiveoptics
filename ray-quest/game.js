@@ -45,7 +45,7 @@
       lawText: "theta_i = theta_r. The incoming and reflected rays make equal angles with the mirror normal.",
       mission: "Use the mirror law to predict where one clean bounce will land, then place the receiver there.",
       optics: [
-        { id: "mirrorA", type: "mirror", label: "Mirror", x: 505, y: 365, length: 260, angle: 32, min: -30, max: 70 }
+        { id: "mirrorA", type: "mirror", label: "Mirror", x: 505, y: 365, length: 260, angle: 32, min: -180, max: 180 }
       ]
     },
     {
@@ -56,7 +56,7 @@
       lawText: "n1 sin(theta1) = n2 sin(theta2). Higher index material bends the ray toward the normal.",
       mission: "Use Snell's law to predict the refracted path, then place the receiver where it should land.",
       optics: [
-        { id: "slabA", type: "slab", label: "Glass slab", x: 515, y: 360, width: 76, height: 420, angle: 8, n: 1.5, min: -35, max: 35 }
+        { id: "slabA", type: "slab", label: "Glass slab", x: 515, y: 360, width: 76, height: 420, angle: 8, n: 1.5, min: -180, max: 180 }
       ]
     },
     {
@@ -67,8 +67,8 @@
       lawText: "Use theta_i = theta_r at mirrors, then n1 sin(theta1) = n2 sin(theta2) at material boundaries.",
       mission: "Combine a reflection and a refraction, then place the receiver at the predicted landing point.",
       optics: [
-        { id: "mirrorB", type: "mirror", label: "Mirror", x: 360, y: 385, length: 220, angle: 48, min: -10, max: 80 },
-        { id: "slabB", type: "slab", label: "Dense block", x: 695, y: 275, width: 86, height: 330, angle: -23, n: 1.72, min: -50, max: 20 }
+        { id: "mirrorB", type: "mirror", label: "Mirror", x: 360, y: 385, length: 220, angle: 48, min: -180, max: 180 },
+        { id: "slabB", type: "slab", label: "Dense block", x: 695, y: 275, width: 86, height: 330, angle: -23, n: 1.72, min: -180, max: 180 }
       ]
     },
     {
@@ -79,8 +79,8 @@
       lawText: "Apply n1 sin(theta1) = n2 sin(theta2) at each boundary. Track the ray direction after it exits the glass.",
       mission: "Predict the exit path after a tilted glass block, then set the receiver height on the fixed line.",
       optics: [
-        { id: "slabC", type: "slab", label: "Crown glass", x: 500, y: 350, width: 92, height: 430, angle: -18, n: 1.52, min: -45, max: 18 },
-        { id: "mirrorC", type: "mirror", label: "Finishing mirror", x: 788, y: 260, length: 190, angle: 62, min: 35, max: 80 }
+        { id: "slabC", type: "slab", label: "Crown glass", x: 500, y: 350, width: 92, height: 430, angle: -18, n: 1.52, min: -180, max: 180 },
+        { id: "mirrorC", type: "mirror", label: "Finishing mirror", x: 788, y: 260, length: 190, angle: 62, min: -180, max: 180 }
       ]
     },
     {
@@ -91,9 +91,9 @@
       lawText: "Use the mirror law and Snell's law in sequence. Keep every outgoing direction in the +x-axis convention.",
       mission: "Trace mirror, glass, then mirror again. Place the receiver where the final ray reaches the locked line.",
       optics: [
-        { id: "mirrorD", type: "mirror", label: "Mirror 1", x: 300, y: 430, length: 210, angle: 55, min: 25, max: 75 },
-        { id: "slabD", type: "slab", label: "Dense glass", x: 610, y: 292, width: 92, height: 350, angle: 16, n: 1.68, min: -12, max: 38 },
-        { id: "mirrorE", type: "mirror", label: "Mirror 2", x: 874, y: 265, length: 185, angle: -34, min: -58, max: -10 }
+        { id: "mirrorD", type: "mirror", label: "Mirror 1", x: 300, y: 430, length: 210, angle: 55, min: -180, max: 180 },
+        { id: "slabD", type: "slab", label: "Dense glass", x: 610, y: 292, width: 92, height: 350, angle: 16, n: 1.68, min: -180, max: 180 },
+        { id: "mirrorE", type: "mirror", label: "Mirror 2", x: 874, y: 265, length: 185, angle: -34, min: -180, max: 180 }
       ]
     }
   ];
